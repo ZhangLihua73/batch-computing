@@ -8,6 +8,7 @@ velocity_coeff=[10. 5. 1. 0.2 0.1];
 parameter_end=zeros(length(parameter(:,1))*length(velocity_coeff),4);
 %密度比、粘度、初始速度、材料参数编号
 parameter_end_extend=zeros(length(parameter(:,1)),length(velocity_coeff),4);
+pathname='E:\batch\vertical\result\';
 % 逐行读取参数并生成超算任务脚本
 for j=1:length(parameter(:,1))
     for m=1:length(velocity_coeff)
@@ -28,7 +29,7 @@ for j=1:length(parameter(:,1))
             mkdir(folderName);
         end
         % 提取参数名称, 构建超算任务脚本文件名
-        scriptFilename = [folderName,'/result/job_','para_', num2str(j),'_v_', num2str(m), '.sh'];
+        scriptFilename = [folderName,'/job_','para_', num2str(j),'_v_', num2str(m), '.sh'];
         % 打开作业脚本文件以写入
         scriptFileID = fopen(scriptFilename, 'w');
         if scriptFileID == -1
