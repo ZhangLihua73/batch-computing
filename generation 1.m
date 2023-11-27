@@ -55,8 +55,18 @@ for j=1:length(parameter(:,1))
     end
 end
 figure;
-plot(parameter_end_extend(:,:,4), parameter_end_extend(:,1,3),'k-*',parameter_end_extend(:,:,4), parameter_end_extend(:,2,3),'r-*',parameter_end_extend(:,:,4), parameter_end_extend(:,3,3),'b-*',parameter_end_extend(:,:,4), parameter_end_extend(:,4,3),'g-*',parameter_end_extend(:,:,4), parameter_end_extend(:,5,3),'y-*')
+% plot(parameter_end_extend(:,:,4), parameter_end_extend(:,1,3),'k-*',parameter_end_extend(:,:,4), parameter_end_extend(:,2,3),'r-*',parameter_end_extend(:,:,4), parameter_end_extend(:,3,3),'b-*',parameter_end_extend(:,:,4), parameter_end_extend(:,4,3),'g-*',parameter_end_extend(:,:,4), parameter_end_extend(:,5,3),'y-*')
+axy1=plot(parameter_end_extend(:,:,4), parameter_end_extend(:,1,3),'k-*')
+hold on;
+axy2=plot(parameter_end_extend(:,:,4), parameter_end_extend(:,2,3),'r-*')
+hold on;
+axy3=plot(parameter_end_extend(:,:,4), parameter_end_extend(:,3,3),'b-*')
+hold on;
+axy4=plot(parameter_end_extend(:,:,4), parameter_end_extend(:,4,3),'g-*')
+hold on;
+axy5=plot(parameter_end_extend(:,:,4), parameter_end_extend(:,5,3),'y-*')
+hold on;
 xlabel('case','FontSize',15,'FontName','Times New Rome');
 ylabel('u_{ref}','FontSize',15,'FontName','Times New Rome');
-legend('10u_{ref}','5u_{ref}','u_{ref}','0.2u_{ref}','0.1u_{ref}','FontSize',15,'FontName','Times New Rome');
+legend([axy1(1),axy2(1),axy3(1),axy4(1),axy5(1)],'10u_{ref}','5u_{ref}','u_{ref}','0.2u_{ref}','0.1u_{ref}','FontSize',15,'FontName','Times New Rome');
 set(gca,'FontName','Times New Rome','FontSize',15);
